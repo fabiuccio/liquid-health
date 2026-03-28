@@ -35,7 +35,6 @@
 | Audio (rest timer beeps) | audioplayers or just_audio |
 | Navigation | GoRouter |
 | Models | freezed + json_serializable |
-| Theme | Electric Flow (see Section 15 for full spec) |
 
 ---
 
@@ -481,69 +480,6 @@ This file is the authoritative source for PE compensation exercises, band moveme
 | Polish | 7-8 | Exercise descriptions + ExerciseDB integration + progressive overload display | Full session feels professional end-to-end |
 
 **Do not skip phases. Do not build Phase 5 statistics before Phase 3 adaptation is working.**
-
-
----
-
-## 15. Theme — Electric Flow
-
-Replaces the earlier "Professional Night" palette. Electric Flow reads as a performance operating system, not a fitness app.
-
-### Color Palette
-
-| Element | Hex | Purpose |
-|---|---|---|
-| Primary Background | `#0F172A` | Deep Slate Night — stable, high-end foundation |
-| Surface / Cards | `#1E293B` | Steel Grey — containers and cards, creates depth |
-| Primary Accent | `#3B82F6` | Electric Blue — represents The Flow and active movement |
-| Secondary Accent | `#22D3EE` | Cyber Cyan — represents AI intelligence and liquid states |
-| Identity / Success | `#2DD4BF` | Teal/Emerald — streaks, checkmarks, completed sets |
-| Muted Text | `#94A3B8` | Slate 400 — secondary info, descriptions |
-| Primary Text | `#F8FAFC` | Slate 50 — high contrast off-white for readability |
-
-### AppColors (Dart)
-```dart
-class AppColors {
-  static const background = Color(0xFF0F172A);
-  static const surface    = Color(0xFF1E293B);
-  static const primary    = Color(0xFF3B82F6);   // Electric Blue
-  static const secondary  = Color(0xFF22D3EE);   // Cyber Cyan
-  static const identity   = Color(0xFF2DD4BF);   // Teal — success/completion
-  static const textMuted  = Color(0xFF94A3B8);
-  static const textPrimary = Color(0xFFF8FAFC);
-
-  // Gradient — used on headlines and key UI elements
-  static const liquidGradient = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [Color(0xFF3B82F6), Color(0xFF22D3EE)],
-  );
-
-  // Glow — soft radial behind main components
-  static const glowOverlay = Color(0x1A3B82F6); // rgba(59,130,246,0.1)
-}
-```
-
-### Typography
-- **Font:** Inter (google_fonts)
-- **900 Black Italic** — main headlines, tight tracking, UPPERCASE — "Operating System" feel
-- **700 Bold** — component headers, CTAs
-- **400 Regular** — body text, descriptions
-- Headers and status indicators strictly UPPERCASE
-
-### Component Rules
-- **Card rounding:** `BorderRadius.circular(48)` — "soft and liquid" feel
-- **Button rounding:** `BorderRadius.circular(16)` — standard rounded-2xl
-- **Borders:** subtle low-opacity `Colors.white.withOpacity(0.05)` — flat and modern, no heavy shadows
-- **Success/completion:** always `#2DD4BF` teal checkmark — every completed set, every logged session, every streak day
-- **Glow effect:** `BoxDecoration` with `radialGradient` using `glowOverlay` behind main components
-
-### Visual Tone
-- High-end engineering, Swiss precision, adaptive resilience
-- High contrast: deep slate background + glowing cyan/blue elements
-- Minimalist first — large clear action buttons, single-instruction layout
-- No cluttered menus — reflects the product's "one clear recommendation" philosophy
-
 
 ---
 
